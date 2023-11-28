@@ -78,7 +78,7 @@ let servicesMap = () => {
     })
 }
 servicesMap()
-filter
+// filter
 filterSearch.addEventListener('keydown', (e) => {
     for (let i = 0; i < actualService.length; i++) {
         if(actualService[i].title.includes(filterSearch.value)){
