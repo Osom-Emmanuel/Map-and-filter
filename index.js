@@ -8,12 +8,11 @@ let Navigation = document.querySelector('.navigation');
 let serviceSection = document.querySelector('.services1')
 let filterSearch = document.querySelector('.filter')
 let filteredArray = []
-let display = document.querySelector('.services1')
 let paragraph1 = document.getElementById('p1')
 let paragraph2 = document.getElementById('p2')
 let paragraph3 = document.getElementById('p3')
 let paragraph4 = document.getElementById('p4')
-let check = true;
+let Display = document.querySelector('.display');
 let actualService = services;
 
 hamburggerIcon.addEventListener('click', (e) => {
@@ -73,24 +72,35 @@ let servicesMap = () => {
         }
         
         
-        serviceSection.append(div)
-        
+        serviceSection.appendChild(div);
     })
 }
 servicesMap()
 // filter
-filterSearch.addEventListener('keydown', (e) => {
-    for (let i = 0; i < actualService.length; i++) {
-        if(actualService[i].title.includes(filterSearch.value)){
-            filteredArray.push(actualService[i])
-            console.log(actualService[i])
-            services.innerHTML = actualService[i];
-        }else return actualService[i];
-        display.innerHTML = actualService[i]
+    filterSearch.addEventListener('keyup',(ev) => {
+        // console.log('i\'m here')
+        serviceSection = "";
+        filteredArray = [];
+        actualService.filter((service) => {
+            if( filterSearch.value !== ""){
+                
+                if(service.title.includes(filterSearch.value) || service.desc.includes(filterSearch.value)){
+                    console.log('i\'m here')
+                    filteredArray = [...filteredArray,service];
+                    console.log(filteredArray);
+                }
+            } else return servicesMap();
+        })
+        
+        // Display.innerHTML = filteredArray
+        ev.preventDefault()
+       
+    })
 
-    }
-
-})
+           
+      
+           
+    
 
 // String methods \\
 paragraph1 = "We are Africa's no. 1 technologies hub for \

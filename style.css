@@ -205,12 +205,13 @@ a{
 @media screen and (min-width: 768px){ 
 	.filter{
 		font-size: x-large;
+		color: whitesmoke;
 	}
 	.tablet-ul{
 		color: #d9d9d9;
 		font-size: large;
 		float: right;
-		margin: -1em 0 0 0;
+		margin: -2em 0 0 0;
 		font-weight: 500;
 		visibility: visible;
 	}
@@ -240,12 +241,26 @@ a{
 	.services{
 		display: flex;
 	}
-	.services1{
-		/* display: flex; */
+	/* .services1{
+		display: flex;
+	} */
+	img{
+		display: flex;
+		width: 50%;
+		height: 30%;
+		padding-left: 20%;
 	}
-
+	.apply-more, .comming-soon,.learn-more{
+		margin-left: 3em;
 	
 	}
+	.logo{
+		height: 2em;
+		margin-left: -5em;
+		padding-top: 0.5em;
+		margin-top: 0;
+	}
+}
 	@media screen and (min-width: 1024px){
 		.filter{
 			font-size: larger;
@@ -285,4 +300,3 @@ a{
 			line-height: 2em;
 		}
 	}
-
